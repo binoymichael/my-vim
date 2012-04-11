@@ -1,19 +1,15 @@
 set nocompatible 
 let mapleader = ","
 nmap <c-s> :cd %:h<CR>
-:colorscheme slate
+colorscheme slate
+set background=dark
 set hidden
 syntax on
 filetype on
 filetype plugin on
 filetype indent on
 set autoindent
-map <leader>f :LustyFilesystemExplorerFromHere<CR>
-map <leader>b :LustyBufferExplorer<CR>
-map <leader>h :LustyFilesystemExplorer<CR>
 map <C-n> <ESC>:tabnew<RETURN>
-map <C-t> :TlistToggle<CR>
-map <A-z> :ConqueTermTab bash<CR>
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
@@ -30,8 +26,6 @@ set nowritebackup  "only in case you don't want a backup file while editing
 set noswapfile     "no swap files
 set wildignore+=*/.git/*,*/vendor/*
 let g:ctrlp_extensions = ['tag', 'buffertag']
-map <leader>g :CtrlP<CR>
-map <leader>t :CtrlPBufTagAll<CR>
 vnoremap <up> <nop>
 vnoremap <down> <nop>
 vnoremap <left> <nop>
@@ -58,5 +52,34 @@ imap <A-v> <ESC><A-v>i
 vmap <A-c> "+y
 noremap Y y$
 runtime macros/matchit.vim 
-map <leader>z :e ~/Desktop/scrap<CR>
+:set guioptions-=m
+:set guioptions-=T
+:set mouse=r
+nnoremap / /\v
+vnoremap / /\v
+set showmatch
+set wrap
+set textwidth=79
+set formatoptions=qrn1
+set colorcolumn=81
+set cmdheight=2
+set wildmode=longest,list,full
+set wildmenu
+map <leader>f :LustyFilesystemExplorerFromHere<CR>
+map <leader>b :LustyBufferExplorer<CR>
+map <leader>h :LustyFilesystemExplorer<CR>
+map <leader>g :CtrlP<CR>
+map <leader>t :CtrlPBufTagAll<CR>
+map <leader>x :e ~/Desktop/scrap<CR>
+map <leader>z :e ~/.vimrc<CR>
+nnoremap <leader><space> :noh<CR>
+map <leader>d :w\|!bundle exec rspec --no-color spec/<CR>
+map <leader>a :Ack
+map <leader>w :w<CR>
+map <leader>q :q<CR>
+map <leader>v :vs<CR><C-w>w
+map <leader>y vi""+y
+map <leader>cb /\(<CR>cib
+map <leader>l <C-w>w
 
+:inoremap hms headers[:msisdn]
