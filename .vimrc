@@ -29,6 +29,7 @@ set wildignore+=*/.git/*,*/vendor/*,*/sdk/*
 set wildmode=longest,list,full
 set wildmenu
 let g:ctrlp_extensions = ['tag', 'buffertag']
+let g:LustyJugglerSuppressRubyWarning = 1
 
 vnoremap <up> <nop>
 vnoremap <down> <nop>
@@ -50,7 +51,18 @@ inoremap <right> <nop>
 :map <C-tab> :tabnext<CR>
 :imap <C-S-tab> <Esc>:tabprevious<CR>i
 :imap <C-tab> <Esc>:tabnext<CR>i
-
+noremap <D-1> 1gt
+noremap <D-2> 2gt
+noremap <D-3> 3gt
+noremap <D-4> 4gt
+noremap <D-5> 5gt
+noremap <D-6> 6gt
+noremap <D-7> 7gt
+noremap <D-8> 8gt
+noremap <D-9> 9gt
+noremap <D-9> 10gt
+noremap <D-S-right> gt
+noremap <D-S-left> gT
 set gfn=Monaco:h14
 set guifont=Monaco:h14
 
@@ -76,8 +88,12 @@ map <leader>v :vs<CR><C-w>w
 map <leader>y vi""+y
 map <leader>m /\(<CR>cib
 map <leader>n :e <C-r>%
+vmap <leader>r y<S-p>gvo<ESC>O<Esc>j
 nmap <silent> <C-l> <C-w>w
 map <leader>x :e /Users/binoy/Work/scrap.txt<CR>
+map <leader>z :e /Users/binoy/.vimrc<CR>
+map <leader>d :ConqueTerm zsh<CR>
 
 nmap <c-s> :cd %:h<CR>
-:inoremap hms headers[:msisdn]
+map <d-h> A#done<Esc>
+imap <d-j> =>
