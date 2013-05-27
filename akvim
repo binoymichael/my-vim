@@ -66,7 +66,7 @@ noremap <D-S-left> gT
 set gfn=Monaco:h14
 set guifont=Monaco:h14
 
-nmap Y vg_"*y
+noremap Y y$
 nnoremap / /\v
 vnoremap / /\v
 set showmatch
@@ -74,7 +74,6 @@ set wrap
 set textwidth=79
 set formatoptions=qrn1
 set cmdheight=2
-set wildcharm=<Tab>
 
 map <leader>f :LustyFilesystemExplorerFromHere<CR>
 map <leader>b :LustyBufferExplorer<CR>
@@ -91,19 +90,10 @@ map <leader>m /\(<CR>cib
 map <leader>n :e <C-r>%
 vmap <leader>r y<S-p>gvo<ESC>O<Esc>j
 nmap <silent> <C-l> <C-w>w
-map <leader>x :e /Users/binoy/Work/notes/scrap.txt<CR>
+map <leader>x :e /Users/binoy/Work/scrap.txt<CR>
 map <leader>z :e /Users/binoy/.vimrc<CR>
-nnoremap <leader>1 :Rcontroller <Tab>
-map <leader>2 :Rview <Tab>
-map <leader>3 :Rmodel <Tab>
-"map <leader>d :ConqueTerm zsh<CR>
-"map <leader>s :PomodoroStart <C-r>"
+map <leader>d :ConqueTerm zsh<CR>
 
 nmap <c-s> :cd %:h<CR>
 map <d-h> A#done<Esc>
 imap <d-j> =>
-set laststatus=2
-"set statusline=%t\ %y\ format:\ %{&ff};\ [%c,%l]%=%#ErrorMsg#%{PomodoroStatus()}%#StatusLine# 
-"let g:pomodoro_do_log = 0 
-
-
