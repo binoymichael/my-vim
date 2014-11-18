@@ -92,10 +92,18 @@ map <leader>n :e <C-r>%
 vmap <leader>r y<S-p>gvo<ESC>O<Esc>j
 nmap <silent> <C-l> <C-w>w
 map <leader>x :e /Users/binoy/Work/notes/scrap.txt<CR>
+map <leader>d :e /Users/binoy/todo.md<CR>
 map <leader>z :e /Users/binoy/.vimrc<CR>
-nnoremap <leader>1 :Rcontroller <Tab>
+"Rails vim stuff
+map <leader>1 :Rcontroller <Tab>
 map <leader>2 :Rview <Tab>
 map <leader>3 :Rmodel <Tab>
+map <leader>4 :Rlib <Tab>
+map <leader>5 :Rspec <Tab>
+map <leader>av ,v:R<CR>
+map <leader>aa :R<CR>
+map <leader>sv ,v:A<CR>
+map <leader>ss :A<CR>
 "map <leader>d :ConqueTerm zsh<CR>
 "map <leader>s :PomodoroStart <C-r>"
 
@@ -106,4 +114,17 @@ set laststatus=2
 "set statusline=%t\ %y\ format:\ %{&ff};\ [%c,%l]%=%#ErrorMsg#%{PomodoroStatus()}%#StatusLine# 
 "let g:pomodoro_do_log = 0 
 
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1         "this is just what i use
 
+autocmd Filetype java setlocal ts=4 sts=4 sw=4
+
+" vertical line indentation
+"let g:indentLine_color_term = 239
+"let g:indentLine_color_gui = '#09AA08'
+"let g:indentLine_char = '│'
+
+
+set wildmode=list:longest,full
